@@ -1,33 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import SimplePaper from './components/SimplePaper';
+import Box from '@mui/material/Box';
 
-import { Routes, Route} from "react-router-dom";
 
-import About from "./routes/About";
-import Careers from "./routes/Careers";
-import Home from "./routes/Home";
-import Navbar from './components/NavBar';
+import ResponsiveAppBar from './components/ResponsiveAppBar';
 
 function App() {
   return (
   
     <div className="App">
 
-      <Navbar />
+      <ResponsiveAppBar />
 
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Great working app!
-        </p>
-      </header>
+      <SimplePaper />
 
-      w
-      {/* <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/careers" element={<Careers />} />
-      </Routes> */}
+      <Box></Box>
 
     </div>
   );
