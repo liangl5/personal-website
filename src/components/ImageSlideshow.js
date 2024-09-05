@@ -3,14 +3,13 @@
 import React, { useState } from 'react';
 import { IconButton, Box, Typography, Avatar } from '@mui/material';
 import { ArrowBack, ArrowForward } from '@mui/icons-material';
-import img1 from '../imgs/20231024_S0624_033.jpg';
-import img2 from '../imgs/20231024_S0624_108.jpg';
-import img3 from '../imgs/20231024_S0624_116.jpg';
-import img4 from '../imgs/luke_hs_2.png';
+
 
 const images = [
-    img3,
-    img4
+    `${process.env.PUBLIC_URL}/imgs/20231024_S0624_116.jpg`,
+    `${process.env.PUBLIC_URL}/imgs/luke_hs_2.png`,
+    // `${process.env.PUBLIC_URL}/imgs/20231024_S0624_033.jpg`,
+    // `${process.env.PUBLIC_URL}/imgs/20231024_S0624_108.jpg`
 ];
 
 

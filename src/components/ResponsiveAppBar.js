@@ -78,8 +78,8 @@ function ResponsiveAppBar({ tabIndex, setTabIndex, theme, setTheme}) {
               </Tab>
 
               <Tab
-                label = 'Resume'
-                key = 'Resume'
+                label = 'Resume & CV'
+                key = 'Resume & CV'
                 component={Link} 
                 to="/resume" 
                 sx={{ my: 2, color: 'white', display: 'block' }}

@@ -4,8 +4,10 @@ import Box from '@mui/material/Box';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailIcon from '@mui/icons-material/Email';
+import SchoolIcon from '@mui/icons-material/School';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
+import LastCommit from './GithubDisplayDate';
 
 function PersonalInfoTab() {
 
@@ -47,9 +49,26 @@ function PersonalInfoTab() {
                   <GitHubIcon style={{ fontSize: 36 }} color='primary'/>
                 </IconButton>
 
+                <IconButton aria-label="Google Scholar" href="https://scholar.google.com/citations?user=rIUAR7AAAAAJ&hl=en&oi=ao">
+                    <SchoolIcon style={{ fontSize: 36 }} color='primary'/>
+                </IconButton>
+
                 <IconButton aria-label="Email" href="mailto:liangl5.prog@gmail.com">
                     <EmailIcon style={{ fontSize: 36 }} color='primary'/>
                 </IconButton>
+            </Box>
+
+            <LastCommit owner='liangl5' repo='personal-website'/>
+
+            <Box class="center-items">
+              <Typography
+                    variant="subtitle2"
+                    align="center"
+                    fontFamily={'Raleway, sans-serif'}
+                    sx={{paddingTop: '5px', fontSize: 12}}
+                >
+              &copy; Luke Liang
+              </Typography>
             </Box>
         </Box>
 
