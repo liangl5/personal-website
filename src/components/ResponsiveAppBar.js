@@ -2,50 +2,42 @@ import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import EmailIcon from '@mui/icons-material/Email';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import IconButton from '@mui/material/IconButton';
+import { BrowserRouter as Router, Route, Routes, Link, useLocation } from 'react-router-dom';
 
 
-const pages = ['Home', 'About', 'Projects'];
-// const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+// WIP make this legit
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
+
+const lightTheme = createTheme({
+  palette: {
+    mode: 'light',
+  },
+});
+
+const pages = ['Home', 'Resume & CV', 'Projects', 'Personal'];
 
 
-function ResponsiveAppBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+function ResponsiveAppBar({ tabIndex, setTabIndex, theme, setTheme}) {
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
+
+  const handleTabChange = (event, newValue) => {
+    setTabIndex(newValue);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme.palette.mode === 'dark' ? lightTheme : darkTheme));
   };
 
 
@@ -53,12 +45,10 @@ function ResponsiveAppBar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
           <Typography
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
             //   look into this
@@ -67,68 +57,67 @@ function ResponsiveAppBar() {
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: 'inherit',
-              textDecoration: 'none'
+              textDecoration: 'none',
+              flexGrow: 1
             }}
           >
-            Luke Liang
+            LUKE LIANG
           </Typography>
 
-          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-            {pages.map((page) => (
+          <Box sx={{flexGrow: 0, display: { xs: 'none', md: 'flex' } }}>
+            <Tabs value={tabIndex} aria-label="basic tabs example">
+
               <Tab
-                label={page}
-                key={page}
-                onClick={handleCloseNavMenu}
+                label = 'Home'
+                key = 'Home'
+                component={Link} 
+                to="/" 
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+                HOME
               </Tab>
-            ))}
+
+              <Tab
+                label = 'Resume'
+                key = 'Resume'
+                component={Link} 
+                to="/resume" 
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                RESUME & CV
+              </Tab>
+
+              <Tab
+                label = 'Projects'
+                key = 'Projects'
+                component={Link} 
+                to="/projects" 
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                PROJECTS
+              </Tab>
+
+              <Tab
+                label = 'Personal'
+                key = 'Personal'
+                component={Link} 
+                to="/personal" 
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                PERSONAL
+              </Tab>
+
             </Tabs>
           </Box>
 
-          {/* <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-            <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-            <Tab label="Item One"/>
-            <Tab label="Item Two"/>
-            <Tab label="Item Three"/>
-            </Tabs>
-          </Box> */}
+          <Box sx={{gridColumn: 1, marginLeft: '5%'}}>
+            <IconButton aria-label="Mode" size="large" onClick={toggleTheme}>
+              <LightModeIcon color='primary' />
+              {/* <DarkModeIcon color='primary' /> */}
+            </IconButton>
+          </Box>
          
-          <Box sx={{ flexGrow: 0 }}>
-
-            <IconButton aria-label="delete" size="large">
-                  <LinkedInIcon />
-            </IconButton>
-
-            <IconButton aria-label="delete" size="large">
-                  <GitHubIcon />
-            </IconButton>
-
-            <IconButton aria-label="delete" size="large">
-                  <EmailIcon />
-            </IconButton>
-
-          </Box>
+          
         </Toolbar>
       </Container>
     </AppBar>
