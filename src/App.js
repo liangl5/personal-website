@@ -39,7 +39,7 @@ function App() {
         
         <Box className="App">
 
-          <ResponsiveAppBar   theme={theme} setTheme={setTheme}/> 
+          <ResponsiveAppBar theme={theme} setTheme={setTheme}/> 
 
           <Box class="flex-container">
               

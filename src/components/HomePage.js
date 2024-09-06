@@ -1,12 +1,14 @@
 import * as React from 'react';
-import ImageSlideshow from './ImageSlideshow';
 import { Box, Typography} from '@mui/material';
-import styles from '../styling/HomePage.css'; // Import the CSS Module
+import styles from '../styling/HomePage.css'; 
+import Paper from '@mui/material/Paper';
+
+
 
 function HomePage() {
 
     return (
-        <Box sx={{maxWidth: '1010px'}}>
+        <Paper elevation={8} sx={{maxWidth: '1100px', color: 'black', backgroundColor: 'white', backgroundImage: 'white', padding: '15px 25px 20px 25px'}}>
             <Typography
                 variant="h4"
                 align="left"
@@ -47,14 +49,14 @@ function HomePage() {
                 Through my undergraduate research I was awarded with the <a href='https://www.astronautscholarship.org/'>Astronaut Scholarship</a> in 2023. I was one of 68 college students nationally awarded this prestigious honor.
             </Box>
 
-            <Box class='textEntry'>
+            <Box>
                 My industry experience includes a software engineering internship at <a href='https://www.jpmorganchase.com/'>JPMorgan Chase & Co.</a> after my freshman year of college. My work includes rebuilding
                 payment & billing software using ReactJS, deploying web applications, and winning the <a href='https://careers.jpmorgan.com/us/en/students/programs/tfsg-hackathons?search=&tags=location__Americas__UnitedStatesofAmerica'>Code for Good hackathon</a> in 2022.
             </Box>
             
             </Typography>
             
-        </Box>
+        </Paper>
 
     )
 }
