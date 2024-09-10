@@ -8,7 +8,7 @@ import Paper from '@mui/material/Paper';
 function HomePage() {
 
     return (
-        <Paper elevation={8} sx={{maxWidth: '1100px', color: 'black', backgroundColor: 'white', backgroundImage: 'white', padding: '15px 25px 20px 25px'}}>
+        <Box sx={{maxWidth: '1100px', padding: '15px 25px 20px 25px'}}>
             <Typography
                 variant="h4"
                 align="left"
@@ -56,7 +56,7 @@ function HomePage() {
             
             </Typography>
             
-        </Paper>
+        </Box>
 
     )
 }

@@ -64,7 +64,7 @@ function ResponsiveAppBar({ tabIndex, setTabIndex, theme, setTheme}) {
             LUKE LIANG
           </Typography>
 
-          <Box sx={{flexGrow: 0, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{flexGrow: 0, display: { xs: 'flex', md: 'flex' } }}>
             <Tabs value={tabIndex} aria-label="basic tabs example">
 
               <Tab
@@ -88,6 +88,16 @@ function ResponsiveAppBar({ tabIndex, setTabIndex, theme, setTheme}) {
               </Tab>
 
               <Tab
+                label = 'Papers'
+                key = 'Papers'
+                component={Link} 
+                to="/papers" 
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                PAPERS
+              </Tab>
+
+              {/* <Tab
                 label = 'Projects'
                 key = 'Projects'
                 component={Link} 
@@ -95,7 +105,7 @@ function ResponsiveAppBar({ tabIndex, setTabIndex, theme, setTheme}) {
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 PROJECTS
-              </Tab>
+              </Tab> */}
 
               <Tab
                 label = 'Personal'
