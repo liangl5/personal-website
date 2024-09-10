@@ -12,7 +12,6 @@ import PersonalInfoTab from './components/PersonalInfoTab';
 
 import { BrowserRouter as Router, Route, Routes, Link, useLocation } from 'react-router-dom';
 
-
 // WIP make this legit
 const darkTheme = createTheme({
   palette: {
@@ -34,31 +33,32 @@ function App() {
   const [theme, setTheme] = React.useState(darkTheme);
 
   return (
+      <Router>
+        <ThemeProvider theme={theme}>
+          
+          <Box className="App">
 
-      <ThemeProvider theme={theme}>
-        
-        <Box className="App">
+            <ResponsiveAppBar theme={theme} setTheme={setTheme}/> 
 
-          <ResponsiveAppBar theme={theme} setTheme={setTheme}/> 
+            <Box class="flex-container">
+                
+                <PersonalInfoTab />
 
-          <Box class="flex-container">
-              
-              <PersonalInfoTab />
+                <Box class='right-column'>
+                  <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/resume" element={<CVPage />} />
+                    <Route path="/Papers" element={<PapersPage />} />
+                    <Route path="/projects" element={<ProjectsPage />} />
+                    <Route path="/personal" element={<PersonalPage />} />
+                  </Routes>
+                </Box>
 
-              <Box class='right-column'>
-                <Routes>
-                  <Route path="/" element={<HomePage />} />
-                  <Route path="/resume" element={<CVPage />} />
-                  <Route path="/Papers" element={<PapersPage />} />
-                  <Route path="/projects" element={<ProjectsPage />} />
-                  <Route path="/personal" element={<PersonalPage />} />
-                </Routes>
-              </Box>
+            </Box>
 
           </Box>
-
-        </Box>
-      </ThemeProvider>
+        </ThemeProvider>
+      </Router>
 
   );
 }
