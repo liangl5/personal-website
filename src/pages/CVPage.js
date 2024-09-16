@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Worker, Viewer } from '@react-pdf-viewer/core';
 import '@react-pdf-viewer/core/lib/styles/index.css';
-import { Box, Typography, IconButton, Collapse } from '@mui/material';
+import { Box, Typography, IconButton, Collapse, useTheme } from '@mui/material';
 
 import ExpandIcon from '@mui/icons-material/Expand';
 import CloseFullscreenIcon from '@mui/icons-material/CloseFullscreen';
@@ -11,6 +11,7 @@ import DownloadIcon from '@mui/icons-material/Download';
 
 
 function CVPage() {
+    const theme = useTheme();
     const [resumeShow, setResumeShow] = React.useState(false);
     const [cvShow, setcvShow] = React.useState(false);
 
@@ -24,20 +25,19 @@ function CVPage() {
 
     const renderIcon = (event) => {
         if (event) {
-            return <CloseFullscreenIcon style={{ fontSize: 36 }} color='primary' />
+            return <CloseFullscreenIcon style={{ fontSize: 36 }} color='secondary' />
         }
-        return <ExpandIcon style={{ fontSize: 36 }} color='primary' />
+        return <ExpandIcon style={{ fontSize: 36 }} color='secondary' />
     };
 
     return (
         <Box sx={{maxWidth: '1100px', padding: '15px 25px 20px 25px'}}>
             <Box>
                 <Typography
-                    variant="h4"
+                    variant="h3"
                     align="left"
-                    fontFamily= 'Raleway, sans-serif'
-                    sx={{fontSize: 38, paddingBottom: '10px', marginBottom: '15px', borderColor: '#403f3e', borderStyle: 'solid', borderWidth:'0px 0px 2px 0px'}}
-                    fontWeight= '500'
+                    color={theme.palette.background.on}
+                    sx={{borderColor: theme.palette.background.ons}}
                 >
                     Luke_Liang_Resume.pdf
 
@@ -52,7 +52,7 @@ function CVPage() {
                         download="Luke_Liang_Resume.pdf"
                         sx={{padding: 0}}
                     >
-                        <DownloadIcon style={{ fontSize: 36 }} color='primary' />
+                        <DownloadIcon style={{ fontSize: 36 }} color='secondary' />
                     </IconButton>
                 </Typography>
 
@@ -69,11 +69,10 @@ function CVPage() {
 
             <Box>
                 <Typography
-                    variant="h4"
+                    variant="h3"
                     align="left"
-                    fontFamily= 'Raleway, sans-serif'
-                    sx={{fontSize: 38, paddingTop: '20px', paddingBottom: '10px',  marginBottom: '15px', borderColor: '#403f3e', borderStyle: 'solid', borderWidth:'0px 0px 2px 0px'}}
-                    fontWeight= '500'
+                    color={theme.palette.background.on}
+                    sx={{marginTop: '20px', borderColor: theme.palette.background.ons}}
                 >
                     Luke_Liang_CV.pdf
 
@@ -88,7 +87,7 @@ function CVPage() {
                         download="Luke_Liang_CV.pdf"
                         sx={{padding: 0}}
                     >
-                        <DownloadIcon style={{ fontSize: 36 }} color='primary' />
+                        <DownloadIcon style={{ fontSize: 36 }} color='secondary' />
                     </IconButton>
                 </Typography>
 

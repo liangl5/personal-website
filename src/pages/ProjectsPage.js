@@ -8,11 +8,8 @@ function ProjectsPage() {
         <Box sx={{maxWidth: '1100px', padding: '15px 25px 20px 25px'}}>
           
             <Typography
-                    variant="h4"
+                    variant="h3"
                     align="left"
-                    fontFamily= 'Raleway, sans-serif'
-                    sx={{fontSize: 38, paddingBottom: '10px', borderColor: '#403f3e', borderStyle: 'solid', borderWidth:'0px 0px 2px 0px'}}
-                    fontWeight= '500'
                 >
                     Projects
             </Typography>

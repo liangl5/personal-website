@@ -1,17 +1,16 @@
 import * as React from 'react';
-import { Box, Paper, Typography } from '@mui/material';
+import { Box, Paper, Typography, useTheme } from '@mui/material';
 import PaperEntry from '../components/PaperEntry';
 
 function PapersPage() {
-
+    const theme = useTheme();
     return (
         <Box sx={{maxWidth: '1100px', padding: '15px 25px 20px 25px'}}>
             <Typography
-                    variant="h4"
+                    variant="h3"
                     align="left"
-                    fontFamily= 'Raleway, sans-serif'
-                    sx={{fontSize: 38, paddingBottom: '10px', borderColor: '#403f3e', borderStyle: 'solid', borderWidth:'0px 0px 2px 0px'}}
-                    fontWeight= '500'
+                    color={theme.palette.background.on}
+                    sx={{borderColor: theme.palette.background.ons}}
                 >
                     Publications
             </Typography>
@@ -25,11 +24,10 @@ function PapersPage() {
             <PaperEntry title={'A new application of machine learning: detecting errors in network simulations'} authors={'M. K. Wozniak, L. Liang, H. Phan, P. J. Giabbanelli'} highlighted_author={1} venue={'Winter Simulation Conference (WSC), 2022'} link={'https://ieeexplore.ieee.org/abstract/document/10015484/'} code={'https://osf.io/c2wb5/'}/>
 
             <Typography
-                    variant="h4"
+                    variant="h3"
                     align="left"
-                    fontFamily= 'Raleway, sans-serif'
-                    sx={{fontSize: 38, paddingBottom: '10px', marginTop: '20px', borderColor: '#403f3e', borderStyle: 'solid', borderWidth:'0px 0px 2px 0px'}}
-                    fontWeight= '500'
+                    color={theme.palette.background.on}
+                    sx={{marginTop: '20px', borderColor: theme.palette.background.ons}}
                 >
                     In Preparation
             </Typography>

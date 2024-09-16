@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Typography from '@mui/material/Typography';
+import {useTheme} from '@mui/material';
+
 
 
 const LastCommit = ({ owner, repo }) => {
+  const theme = useTheme();
   const [commitDate, setCommitDate] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -42,6 +45,7 @@ const LastCommit = ({ owner, repo }) => {
         align="center"
         fontFamily={'Raleway, sans-serif'}
         sx={{paddingTop: '10px', fontSize: 12}}
+        color={theme.palette.background.on}
     >
         Last Update: {new Date(commitDate).toLocaleString()}
     </Typography>

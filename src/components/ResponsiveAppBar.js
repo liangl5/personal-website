@@ -6,38 +6,27 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
 import LightModeIcon from '@mui/icons-material/LightMode';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
 import IconButton from '@mui/material/IconButton';
 import { BrowserRouter as Router, Route, Routes, Link, useLocation } from 'react-router-dom';
+import { lightTheme, darkTheme } from './Themes';
+import { useTheme } from '@mui/material';
 
 
-// WIP make this legit
-const darkTheme = createTheme({
-  palette: {
-    mode: 'dark',
-  },
-});
 
-const lightTheme = createTheme({
-  palette: {
-    mode: 'light',
-  },
-});
 
 const pages = ['Home', 'Resume & CV', 'Projects', 'Personal'];
 
 
 function ResponsiveAppBar({ tabIndex, setTabIndex, theme, setTheme}) {
-
+  //const theme = useTheme();
 
   const handleTabChange = (event, newValue) => {
     setTabIndex(newValue);
   };
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme.palette.mode === 'dark' ? lightTheme : darkTheme));
+    setTheme((prevTheme) => (prevTheme.mode === 'dark' ? lightTheme : darkTheme));
   };
 
 
@@ -60,6 +49,7 @@ function ResponsiveAppBar({ tabIndex, setTabIndex, theme, setTheme}) {
               textDecoration: 'none',
               flexGrow: 1
             }}
+            color={theme.palette.primary.on}
           >
             LUKE LIANG
           </Typography>
@@ -72,7 +62,7 @@ function ResponsiveAppBar({ tabIndex, setTabIndex, theme, setTheme}) {
                 key = 'Home'
                 component={Link} 
                 to="/" 
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: theme.palette.primary.on, display: 'block' }}
               >
                 HOME
               </Tab>
@@ -82,7 +72,7 @@ function ResponsiveAppBar({ tabIndex, setTabIndex, theme, setTheme}) {
                 key = 'Resume & CV'
                 component={Link} 
                 to="/resume" 
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: theme.palette.primary.on, display: 'block' }}
               >
                 RESUME & CV
               </Tab>
@@ -92,7 +82,7 @@ function ResponsiveAppBar({ tabIndex, setTabIndex, theme, setTheme}) {
                 key = 'Papers'
                 component={Link} 
                 to="/papers" 
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: theme.palette.primary.on, display: 'block' }}
               >
                 PAPERS
               </Tab>
@@ -112,7 +102,7 @@ function ResponsiveAppBar({ tabIndex, setTabIndex, theme, setTheme}) {
                 key = 'Personal'
                 component={Link} 
                 to="/personal" 
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: theme.palette.primary.on, display: 'block' }}
               >
                 PERSONAL
               </Tab>
@@ -122,7 +112,7 @@ function ResponsiveAppBar({ tabIndex, setTabIndex, theme, setTheme}) {
 
           <Box sx={{gridColumn: 1, marginLeft: '5%'}}>
             <IconButton aria-label="Mode" size="large" onClick={toggleTheme}>
-              <LightModeIcon color='primary' />
+              <LightModeIcon  sx={{fill: theme.palette.primary.on}}/>
               {/* <DarkModeIcon color='primary' /> */}
             </IconButton>
           </Box>

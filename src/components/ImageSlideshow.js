@@ -1,7 +1,7 @@
 // src/components/ImageSlideshow.js
 
 import React, { useState } from 'react';
-import { IconButton, Box, Typography, Avatar } from '@mui/material';
+import { IconButton, Box, Typography, Avatar, useTheme } from '@mui/material';
 import { ArrowBack, ArrowForward } from '@mui/icons-material';
 
 
@@ -14,6 +14,7 @@ const images = [
 
 
 const ImageSlideshow = () => {
+  const theme = useTheme();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePrevious = () => {
@@ -29,18 +30,18 @@ const ImageSlideshow = () => {
       <Avatar src={images[currentIndex]} alt={`Slide ${currentIndex + 1}`} style={{ width:250, height: 250 }} />
       <IconButton
         onClick={handlePrevious}
-        sx={{ position: 'absolute', top: '50%', left: '10px', transform: 'translateY(-50%)' }}
+        sx={{ position: 'absolute', top: '50%', left: '10px', transform: 'translateY(-50%)'}}
       >
-        <ArrowBack color="action"/>
+        <ArrowBack color="action" sx={{fill: theme.palette.background.ons}}/>
       </IconButton>
       <IconButton
         onClick={handleNext}
         sx={{ position: 'absolute', top: '50%', right: '10px', transform: 'translateY(-50%)' }}
       >
-        <ArrowForward color="action"/>
+        <ArrowForward color="action"  sx={{fill: theme.palette.background.ons}}/>
       </IconButton>
       <Box sx={{ position: 'absolute', bottom: '-20px', left: '50%', transform: 'translateX(-50%)' }}>
-        <Typography variant="caption">{`${currentIndex + 1} / ${images.length}`}</Typography>
+        <Typography variant="caption" color={theme.palette.background.ons}>{`${currentIndex + 1} / ${images.length}`}</Typography>
       </Box>
     </Box>
   );
