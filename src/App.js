@@ -4,9 +4,9 @@ import Box from '@mui/material/Box';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import ResponsiveAppBar from './components/ResponsiveAppBar';
 import HomePage from './pages/HomePage';
-import CVPage from './pages/CVPage';
+import ResumePage from './pages/ResumePage';
 import ProjectsPage from './pages/ProjectsPage';
-import PapersPage from './pages/PapersPage';
+import PublicationsPage from './pages/PublicationsPage';
 import PersonalPage from './pages/PersonalPage';
 import PersonalInfoTab from './components/PersonalInfoTab';
 import {lightTheme, darkTheme} from './components/Themes'
@@ -37,8 +37,8 @@ function App() {
                 <Box class='right-column'>
                   <Routes>
                     <Route path="/" element={<HomePage />} />
-                    <Route path="/resume" element={<CVPage />} />
-                    <Route path="/Papers" element={<PapersPage />} />
+                    <Route path="/resume" element={<ResumePage />} />
+                    <Route path="/publications" element={<PublicationsPage />} />
                     <Route path="/projects" element={<ProjectsPage />} />
                     <Route path="/personal" element={<PersonalPage />} />
                   </Routes>

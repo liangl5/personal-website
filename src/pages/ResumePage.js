@@ -10,7 +10,7 @@ import DownloadIcon from '@mui/icons-material/Download';
 
 
 
-function CVPage() {
+function ResumePage() {
     const theme = useTheme();
     const [resumeShow, setResumeShow] = React.useState(false);
     const [cvShow, setcvShow] = React.useState(false);
@@ -110,4 +110,4 @@ function CVPage() {
     )
 }
 
-export default CVPage;
+export default ResumePage;

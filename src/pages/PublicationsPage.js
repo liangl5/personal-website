@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Box, Paper, Typography, useTheme } from '@mui/material';
 import PaperEntry from '../components/PaperEntry';
 
-function PapersPage() {
+function PublicationsPage() {
     const theme = useTheme();
     return (
         <Box sx={{maxWidth: '1100px', padding: '15px 25px 20px 25px'}}>
@@ -42,4 +42,4 @@ function PapersPage() {
     )
 }
 
-export default PapersPage;
+export default PublicationsPage;

@@ -78,13 +78,13 @@ function ResponsiveAppBar({ tabIndex, setTabIndex, theme, setTheme}) {
               </Tab>
 
               <Tab
-                label = 'Papers'
-                key = 'Papers'
+                label = 'Publications'
+                key = 'Publications'
                 component={Link} 
-                to="/papers" 
+                to="/publications" 
                 sx={{ my: 2, color: theme.palette.primary.on, display: 'block' }}
               >
-                PAPERS
+                PUBLICATIONS
               </Tab>
 
               {/* <Tab
