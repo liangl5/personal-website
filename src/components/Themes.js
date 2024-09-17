@@ -25,54 +25,50 @@ const baseTheme = createTheme({
   },
 });
 
-const lightTheme = createTheme({
+const darkTheme = createTheme({
   ...baseTheme, 
   palette: {
     primary: {
-        main: '#6200EE',
-        variant: '#3700B3',
-        on: '#FFFFFF'
+        main: '#9171f8',
+        on: '#0D0D0D'
     },
     secondary: {
-        main: '#03DAC6',
-        on: '#000000'
+        main: '#9171f8'
     },
     background: {
-        main: '#FFFFFF',
-        on: '#000000',
-        ons: '#403f3e',
-        onlink: '#1a29fd',
+        main: '#1F1F1F',
+        on: '#F2F2F2',
+        ons: '#403f3e', // underline gray color
+        onlink: '#9098FD', // light blue link color
     },
   },
   typography: {
     ...baseTheme.typography, 
   },
-  mode: 'light'
+  mode: 'dark'
 });
 
-const darkTheme = createTheme({
+const lightTheme = createTheme({
   ...baseTheme,
   palette: {
     primary: {
-        main: '#BB86FC',
-        variant: '#3700B3',
-        on: '#000000'
+        main: '#244ABC',
+        on: '#FFFFFF'
     },
     secondary: {
-        main: '#03DAC6',
-        on: '#000000'
+        main: '#244ABC',
     },
     background: {
-        main: '#121212',
-        on: '#FFFFFF',
+        main: '#FFFFFF',
+        on: '#121212',
         ons: '#666565',
-        onlink: '#717af7',
+        onlink: '#0D1BE3',
     },
   },
   typography: {
     ...baseTheme.typography,
   },
-  mode: 'dark'
+  mode: 'light'
 });
 
 export { lightTheme, darkTheme };

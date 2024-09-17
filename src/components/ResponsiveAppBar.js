@@ -7,6 +7,7 @@ import Container from '@mui/material/Container';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import LightModeIcon from '@mui/icons-material/LightMode';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
 import IconButton from '@mui/material/IconButton';
 import { BrowserRouter as Router, Route, Routes, Link, useLocation } from 'react-router-dom';
 import { lightTheme, darkTheme } from './Themes';
@@ -45,7 +46,6 @@ function ResponsiveAppBar({ tabIndex, setTabIndex, theme, setTheme}) {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
               textDecoration: 'none',
               flexGrow: 1
             }}
@@ -112,8 +112,7 @@ function ResponsiveAppBar({ tabIndex, setTabIndex, theme, setTheme}) {
 
           <Box sx={{gridColumn: 1, marginLeft: '5%'}}>
             <IconButton aria-label="Mode" size="large" onClick={toggleTheme}>
-              <LightModeIcon  sx={{fill: theme.palette.primary.on}}/>
-              {/* <DarkModeIcon color='primary' /> */}
+              {theme.mode == 'dark' ? <LightModeIcon sx={{fill: theme.palette.primary.on}}/> : <DarkModeIcon sx={{fill: theme.palette.primary.on}}/>}
             </IconButton>
           </Box>
          

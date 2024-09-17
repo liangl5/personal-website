@@ -32,11 +32,11 @@ function PapersPage() {
                     In Preparation
             </Typography>
 
-            <PaperEntry title={'A Cellular Automata Approach to Evaluating Drug Effectiveness for HIV'} authors={'L. Liang, Z. Sun, P. J. Giabbanelli'} highlighted_author={0} venue={''} link={''} code={''}/>
+            <PaperEntry title={'A cellular automata approach to evaluating drug effectiveness for HIV'} authors={'L. Liang, Z. Sun, P. J. Giabbanelli'} highlighted_author={0} venue={''} link={''} code={''}/>
 
-            <PaperEntry title={'An Artificial Intelligence Approach to Support Youth Suicide Prevention Initiatives in the U.S.A'} authors={'L. Liang, R. Schuerkamp, K. L. Rice, M. M. Brown, N. Nataraj, J. Mendoza-Alonzo, C. R. Harper, C. Florence, B. D. Maldonado, B. Moran, P. J. Giabbanelli'} highlighted_author={0} venue={''} link={''} code={''}/>
+            <PaperEntry title={'An artificial intelligence approach to support youth suicide prevention initiatives in the U.S.A'} authors={'L. Liang, R. Schuerkamp, K. L. Rice, M. M. Brown, N. Nataraj, J. Mendoza-Alonzo, C. R. Harper, C. Florence, B. D. Maldonado, B. Moran, P. J. Giabbanelli'} highlighted_author={0} venue={''} link={''} code={''}/>
 
-            <PaperEntry title={'Impact of Policies, Practices, and Programs on Preventing Adolescent Suicide: An Agent-Based Modeling Approach'} authors={'K. L. Rice, P. J. Giabbanelli, M. M. Brown, N. Nataraj, C. R. Harper, L. Liang, R. Schuerkamp, C. Florence'} highlighted_author={5} venue={''} link={''} code={''}/>
+            <PaperEntry title={'Impact of policies, practices, and programs on preventing adolescent suicide: an agent-based modeling approach'} authors={'K. L. Rice, P. J. Giabbanelli, M. M. Brown, N. Nataraj, C. R. Harper, L. Liang, R. Schuerkamp, C. Florence'} highlighted_author={5} venue={''} link={''} code={''}/>
         </Box>
 
     )
