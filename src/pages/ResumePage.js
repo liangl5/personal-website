@@ -41,7 +41,7 @@ function ResumePage() {
                 >
                     Luke_Liang_Resume.pdf
 
-                    <IconButton aria-label="Expand" onClick={()=>{handleExpand('resume')}} sx={{padding: '0 10px 0 25px'}}>
+                    <IconButton aria-label="Expand" onClick={()=>{handleExpand('resume')}} sx={{marginLeft: '10px', padding: '5px'}}>
                         {renderIcon(resumeShow)}
                     </IconButton>
 
@@ -50,7 +50,7 @@ function ResumePage() {
                         component="a"
                         href={`${process.env.PUBLIC_URL}/documents/Luke_Liang_Resume.pdf`}
                         download="Luke_Liang_Resume.pdf"
-                        sx={{padding: 0}}
+                        sx={{padding: '5px'}}
                     >
                         <DownloadIcon style={{ fontSize: 36 }} color='secondary' />
                     </IconButton>
@@ -76,7 +76,7 @@ function ResumePage() {
                 >
                     Luke_Liang_CV.pdf
 
-                    <IconButton aria-label="Expand" onClick={()=>{handleExpand('cv')}} sx={{padding: '0 10px 0 25px'}}>
+                    <IconButton aria-label="Expand" onClick={()=>{handleExpand('cv')}} sx={{marginLeft: '10px', padding: '5px'}}>
                         {renderIcon(cvShow)}
                     </IconButton>
 
@@ -85,7 +85,7 @@ function ResumePage() {
                         component="a"
                         href={`${process.env.PUBLIC_URL}/documents/Luke_Liang_CV.pdf`}
                         download="Luke_Liang_CV.pdf"
-                        sx={{padding: 0}}
+                        sx={{padding: '5px'}}
                     >
                         <DownloadIcon style={{ fontSize: 36 }} color='secondary' />
                     </IconButton>
