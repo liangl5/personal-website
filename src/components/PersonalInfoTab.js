@@ -53,7 +53,7 @@ function PersonalInfoTab() {
               <EmailIcon style={{ fontSize: 36 }} sx={{fill: theme.palette.secondary.main}}/>
           </IconButton>
 
-          <IconButton aria-label="Google Scholar" href="https://scholar.google.com/citations?user=rIUAR7AAAAAJ&hl=en&oi=ao">
+          <IconButton aria-label="Google Scholar" href="https://scholar.google.com/citations?user=lrzKxRUAAAAJ&hl=en">
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
               viewBox="0 0 24 24" 
