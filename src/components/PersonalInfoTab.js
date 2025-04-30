@@ -36,7 +36,7 @@ function PersonalInfoTab() {
               sx={{fontSize: 18, padding: '10px 0 10px 0', maxWidth: '300px', marginTop: '10px', borderColor: theme.palette.background.ons, borderStyle: 'solid', borderWidth:'2px 0px 2px 0px'}}
               color={theme.palette.background.on}
           >
-              New graduate passionate about machine learning and software engineering
+              Student passionate about machine learning and software engineering
           </Typography>
         </Box>
 

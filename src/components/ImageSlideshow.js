@@ -7,7 +7,7 @@ import { ArrowBack, ArrowForward } from '@mui/icons-material';
 
 const images = [
     `${process.env.PUBLIC_URL}/imgs/20231024_S0624_116.jpg`,
-    `${process.env.PUBLIC_URL}/imgs/luke_hs_2.png`,
+    `${process.env.PUBLIC_URL}/imgs/luke_hs.jpg`,
     // `${process.env.PUBLIC_URL}/imgs/20231024_S0624_033.jpg`,
     // `${process.env.PUBLIC_URL}/imgs/20231024_S0624_108.jpg`
 ];
