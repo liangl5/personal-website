@@ -27,7 +27,7 @@ function HomePage() {
                 color={theme.palette.background.on}
             >
 
-            <Box class='textEntry'>I am currently a recent graduate of Miami University (2021-2024) with a B.S. in Computer Science and a B.S. in Data Science and Statistics.</Box>
+            <Box class='textEntry'>Incoming Master's student in Computer Science at Columbia University. Recent graduate of Miami University (2021-2024) with a B.S. in Computer Science and a B.S. in Data Science and Statistics.</Box>
             
             <Box>At my time studying in Miami University I was a part of many projects and experiences: </Box>
             <Box>

@@ -76,7 +76,7 @@ function PersonalInfoTab() {
                 sx={{paddingTop: '5px', fontSize: 12}}
                 color={theme.palette.background.on}
             >
-          &copy;2024 Luke Liang
+          &copy;2025 Luke Liang
           </Typography>
         </Box>
       </Box>
