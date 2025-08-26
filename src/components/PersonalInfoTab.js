@@ -41,7 +41,7 @@ function PersonalInfoTab() {
         </Box>
 
         <Box sx={{paddingTop: '5px'}}>
-          <IconButton aria-label="LinkedIn" href="https://www.linkedin.com/in/luke-liang-881aa51b1/">
+          <IconButton aria-label="LinkedIn" href="https://www.linkedin.com/in/luke-liang-cs/">
             <LinkedInIcon style={{ fontSize: 36 }} sx={{fill: theme.palette.secondary.main}}/>
           </IconButton>
 
