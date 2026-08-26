@@ -1,55 +1,66 @@
-import styles from './App.css'
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import ResponsiveAppBar from './components/ResponsiveAppBar';
-import HomePage from './pages/HomePage';
-import ResumePage from './pages/ResumePage';
-import ProjectsPage from './pages/ProjectsPage';
-import PublicationsPage from './pages/PublicationsPage';
-import PersonalPage from './pages/PersonalPage';
-import PersonalInfoTab from './components/PersonalInfoTab';
-import {lightTheme, darkTheme} from './components/Themes'
-
-import { BrowserRouter as Router, Route, Routes, Link, useLocation } from 'react-router-dom';
-
+import { Box } from '@mui/material';
+import { ThemeProvider } from '@mui/material/styles';
+import Nav from './components/Nav';
+import Footer from './components/Footer';
+import Hero from './sections/Hero';
+import About from './sections/About';
+import Resume from './sections/Resume';
+import Projects from './sections/Projects';
+import Publications from './sections/Publications';
+import Personal from './sections/Personal';
+import { lightTheme, darkTheme } from './components/Themes';
+import { scrollToSection } from './utils/scrollToSection';
 
 function App() {
-  // const [tabIndex, setTabIndex] = React.useState(0);
   const [theme, setTheme] = React.useState(lightTheme);
+
   const toggleTheme = () => {
-    setTheme((theme) => (theme.mode === 'dark' ? lightTheme : darkTheme));
+    setTheme((prevTheme) => (prevTheme.mode === 'dark' ? lightTheme : darkTheme));
   };
 
+  React.useEffect(() => {
+    if (window.location.hash) {
+      scrollToSection(window.location.hash.slice(1), { instant: true });
+    }
+  }, []);
 
   return (
-      <Router>
-        <ThemeProvider theme={theme}>
-          
-          <Box className="App" sx={{height: '100%', minHeight: '100vh', backgroundColor: theme.palette.background.main}}>
+    <ThemeProvider theme={theme}>
+      <Box
+        component="a"
+        href="#main"
+        sx={{
+          position: 'absolute',
+          left: '-9999px',
+          top: 0,
+          zIndex: 100,
+          padding: '12px 20px',
+          borderRadius: '8px',
+          backgroundColor: theme.palette.secondary.main,
+          color: theme.palette.primary.on,
+          fontWeight: 600,
+          '&:focus': { left: '12px', top: '12px' },
+        }}
+      >
+        Skip to content
+      </Box>
 
-            <ResponsiveAppBar theme={theme} setTheme={setTheme}/> 
+      <Box sx={{ backgroundColor: theme.palette.background.main, minHeight: '100vh' }}>
+        <Nav toggleTheme={toggleTheme} mode={theme.mode} />
 
-            <Box class="flex-container">
-                
-                <PersonalInfoTab />
+        <Box component="main" id="main">
+          <Hero />
+          <About />
+          <Resume />
+          <Projects />
+          <Publications />
+          <Personal />
+        </Box>
 
-                <Box class='right-column'>
-                  <Routes>
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="/resume" element={<ResumePage />} />
-                    <Route path="/publications" element={<PublicationsPage />} />
-                    <Route path="/projects" element={<ProjectsPage />} />
-                    <Route path="/personal" element={<PersonalPage />} />
-                  </Routes>
-                </Box>
-
-            </Box>
-
-          </Box>
-        </ThemeProvider>
-      </Router>
-
+        <Footer />
+      </Box>
+    </ThemeProvider>
   );
 }
 

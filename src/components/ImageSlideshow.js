@@ -7,7 +7,9 @@ import { ArrowBack, ArrowForward } from '@mui/icons-material';
 
 const images = [
     `${process.env.PUBLIC_URL}/imgs/20231024_S0624_116.jpg`,
-    `${process.env.PUBLIC_URL}/imgs/luke_hs.jpg`,
+    `${process.env.PUBLIC_URL}/imgs/IMG_7250.jpeg`,
+    `${process.env.PUBLIC_URL}/imgs/IMG_6742.jpeg`,
+    
     // `${process.env.PUBLIC_URL}/imgs/20231024_S0624_033.jpg`,
     // `${process.env.PUBLIC_URL}/imgs/20231024_S0624_108.jpg`
 ];
@@ -29,18 +31,22 @@ const ImageSlideshow = () => {
     <Box sx={{ position: 'relative', width: 'auto', height: 'auto'}}>
       <Avatar src={images[currentIndex]} alt={`Slide ${currentIndex + 1}`} style={{ width:250, height: 250 }} />
       <IconButton
+        aria-label="Previous photo"
         onClick={handlePrevious}
-        sx={{ position: 'absolute', top: '50%', left: '10px', transform: 'translateY(-50%)'}}
+        size="small"
+        sx={{ position: 'absolute', top: '50%', left: { xs: '-38px', sm: '-46px' }, transform: 'translateY(-50%)'}}
       >
         <ArrowBack color="action" sx={{fill: theme.palette.background.ons}}/>
       </IconButton>
       <IconButton
+        aria-label="Next photo"
         onClick={handleNext}
-        sx={{ position: 'absolute', top: '50%', right: '10px', transform: 'translateY(-50%)' }}
+        size="small"
+        sx={{ position: 'absolute', top: '50%', right: { xs: '-38px', sm: '-46px' }, transform: 'translateY(-50%)' }}
       >
         <ArrowForward color="action"  sx={{fill: theme.palette.background.ons}}/>
       </IconButton>
-      <Box sx={{ position: 'absolute', bottom: '-20px', left: '50%', transform: 'translateX(-50%)' }}>
+      <Box sx={{ position: 'absolute', bottom: '-32px', left: '50%', transform: 'translateX(-50%)' }}>
         <Typography variant="caption" color={theme.palette.background.ons}>{`${currentIndex + 1} / ${images.length}`}</Typography>
       </Box>
     </Box>
